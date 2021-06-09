@@ -24,6 +24,27 @@ class DoubleLinkedList {
       this.tail = node;
     }
   };
+  AddAt(index, name) {
+    let current = this.head;
+    let counter = 1;
+    let node = new Node(name);
+    if (index == 0) {
+      this.head.prev = node;
+      node.next = this.head;
+      this.head = node;
+    } else {
+      while (current) {
+        current = current.next;
+        if (counter == index) {
+          node.prev = current.prev;
+          current.prev.next = node;
+          node.next = current;
+          current.prev = node;
+        }
+        counter++;
+      }
+    }
+  }
 
   removeStation = (name) => {
     let current = this.head;
@@ -63,5 +84,8 @@ galaxies.addStaion('Cigar');
 galaxies.addStaion('Butterfly');
 
 console.log(galaxies.traverse());
+galaxies.AddAt(2, 'Zeinab');
+console.log(galaxies.traverse());
+
 galaxies.removeStation('Cigar');
 console.log(galaxies.traverse());
