@@ -58,9 +58,9 @@ class DoubleLinkedList {
   }
 }
 let galaxies = new DoubleLinkedList();
-galaxies.addStaion('andromeda');
+galaxies.addStaion('Andromeda');
 galaxies.addStaion('Cigar');
-galaxies.addStaion('butterfly');
+galaxies.addStaion('Butterfly');
 
 console.log(galaxies.traverse());
 galaxies.removeStation('Cigar');
