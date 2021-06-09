@@ -12,8 +12,8 @@ class DoubleLinkedList {
     this.tail = null;
   }
 
-  addStaion(item) {
-    let node = new Node(item);
+  addStaion = (name) => {
+    let node = new Node(name);
 
     if (!this.head) {
       this.head = node;
@@ -23,12 +23,12 @@ class DoubleLinkedList {
       this.tail.next = node;
       this.tail = node;
     }
-  }
+  };
 
-  removeStation(item) {
+  removeStation = (name) => {
     let current = this.head;
     while (current) {
-      if (current.data === item) {
+      if (current.data === name) {
         if (current == this.head && current == this.tail) {
           this.head = null;
           this.tail = null;
@@ -45,9 +45,9 @@ class DoubleLinkedList {
       }
       current = current.next;
     }
-  }
+  };
 
-  traverse() {
+  traverse = () => {
     let current = this.head;
     let stations = [];
     while (current !== null) {
@@ -55,7 +55,7 @@ class DoubleLinkedList {
       current = current.next;
     }
     return stations;
-  }
+  };
 }
 let galaxies = new DoubleLinkedList();
 galaxies.addStaion('Andromeda');
